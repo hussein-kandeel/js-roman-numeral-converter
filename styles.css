@@ -1,0 +1,22 @@
+:root {
+	font-size: 100%;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	padding: 0;
+	line-height: 1.5rem;
+}
+
+#result {
+    font-family: serif;
+}
+
+#my-footer {
+    margin-top: calc(100vh /10);
+}

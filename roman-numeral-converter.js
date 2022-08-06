@@ -48,4 +48,26 @@ function convertToRoman(num) {
 // console.log(`should return the string MMMCMXCIX. returning => `, convertToRoman(3999));
 
 
+addEventListener("submit", function(e) {
+    e.preventDefault();
 
+    // Get the submitter button
+    let submitBtn = e.submitter;
+    submitBtn.textContent = "Converting...";
+    submitBtn.disabled = true;
+
+    let num = this.document.getElementById(submitBtn.value).value;
+
+    // Clean the result just in case it is not clear
+    let result = this.document.getElementById("result");
+    result.textContent = "";
+
+    // Set some time of delay
+    this.setTimeout(function() {
+        result.setAttribute("class", "mx-auto mt-3 fs-1 fw-light text-primary text-center");
+        result.style.fontFamily = "serif";
+        result.textContent = convertToRoman(num);
+        submitBtn.textContent = "Convert";
+        submitBtn.disabled = false;
+    }, 1000);
+});
